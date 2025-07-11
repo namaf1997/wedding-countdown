@@ -104,3 +104,18 @@ body {
     opacity: 0;
   }
 }
+
+/* 日数テキスト：前面・視認性向上 */
+#countdown-number {
+  position: absolute;
+  bottom: 8%;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(2rem, 15vw, 8rem);
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 影で視認性UP */
+  z-index: 5; /* 光やオーバーレイより上に */
+  pointer-events: none;
+}
+
