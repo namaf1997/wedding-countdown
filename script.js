@@ -1,5 +1,5 @@
 // 結婚式当日（yyyy, mm - 1, dd）
-const weddingDate = new Date(2025, 8, 10); // ←9月は「8」
+const weddingDate = new Date(2025, 8, 14); // ←9月は「8」
 const today = new Date();
 today.setHours(0, 0, 0, 0);
 
