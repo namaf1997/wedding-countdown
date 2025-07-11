@@ -8,6 +8,7 @@ const diffDays = Math.max(0, Math.ceil((weddingDate - today) / (1000 * 60 * 60 *
 
 // 画像リスト（必要に応じて追加）
 const imageUrls = [
+  "images/2025-02-03_22-29-49_811.jpeg",
   "images/2022-07-10_15-07-15_398.jpeg",
   "images/2021-12-25_01-14-54_153.jpeg",
   "images/2022-02-05_12-34-17_159.jpeg",
@@ -30,7 +31,6 @@ const imageUrls = [
   "images/2024-07-21_20-49-13_563.jpeg",
   "images/2024-09-13_20-57-12_168.jpeg",
   "images/2024-09-18_13-12-03_286.jpeg",
-  "images/2025-02-03_22-29-49_811.jpeg",
   "images/2025-03-29_19-21-26_000 (2025-04-03T11_58_36.703).jpeg",
   "images/2025-03-29_19-21-40_000.jpeg",
   "images/2025-03-29_19-26-09_000 (2025-04-03T11_58_30.324).jpeg",
