@@ -91,6 +91,16 @@ const imageUrls = [
   "images2/2025-01-01_09-44-17_573.jpg"
 ];
 
+function getDailyRandomIndex(arrayLength) {
+  const todayStr = new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
+  let hash = 0;
+  for (let i = 0; i < todayStr.length; i++) {
+    hash += todayStr.charCodeAt(i);
+  }
+  return hash % arrayLength;
+}
+
+
 const imageIndex = getDailyRandomIndex(imageUrls.length);
 
 const image = document.getElementById("daily-image");
