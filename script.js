@@ -1,13 +1,18 @@
-// 結婚式当日（yyyy, mm - 1, dd）
-const weddingDate = new Date(2025, 8, 14); // ←9月は「8」
-const today = new Date();
-today.setHours(0, 0, 0, 0);
+window.addEventListener("load", () => {
+  // ----------------------------
+  // 結婚式当日（yyyy, mm - 1, dd）
+  // ----------------------------
+  const weddingDate = new Date(2025, 8, 14); // ←9月は「8」
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
-// 残り日数を計算
-const diffDays = Math.max(0, Math.ceil((weddingDate - today) / (1000 * 60 * 60 * 24)));
+  // 残り日数を計算
+  const diffDays = Math.max(0, Math.ceil((weddingDate - today) / (1000 * 60 * 60 * 24)));
 
-// 画像リスト（必要に応じて追加）
-const imageUrls = [
+  // ----------------------------
+  // 日替わり画像リスト（画像は必要に応じて追加）
+  // ----------------------------
+  const imageUrls = [
   "images/2025-02-03_22-29-49_811.jpeg",
   "images/2022-07-10_15-07-15_398.jpeg",
   "images/2021-12-25_01-14-54_153.jpeg",
@@ -91,36 +96,41 @@ const imageUrls = [
   "images2/2025-01-01_09-44-17_573.jpg"
 ];
 
-function getDailyRandomIndex(arrayLength) {
-  const todayStr = new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
-  let hash = 0;
-  for (let i = 0; i < todayStr.length; i++) {
-    hash += todayStr.charCodeAt(i);
+// ----------------------------
+  // 日替わりランダム画像インデックス関数
+  // ----------------------------
+  function getDailyRandomIndex(arrayLength) {
+    const todayStr = new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
+    let hash = 0;
+    for (let i = 0; i < todayStr.length; i++) {
+      hash += todayStr.charCodeAt(i);
+    }
+    return hash % arrayLength;
   }
-  return hash % arrayLength;
-}
 
+  const imageIndex = getDailyRandomIndex(imageUrls.length);
 
-const imageIndex = getDailyRandomIndex(imageUrls.length);
+  // ----------------------------
+  // DOMの画像とカウントダウンに反映
+  // ----------------------------
+  const image = document.getElementById("daily-image");
+  const number = document.getElementById("countdown-number");
 
-const image = document.getElementById("daily-image");
-const number = document.getElementById("countdown-number");
-image.src = imageUrls[imageIndex];
-number.textContent = `${diffDays}`;
+  image.src = imageUrls[imageIndex];
+  number.textContent = `${diffDays}`;
 
-// ----------------------------
-// 光筋エフェクト処理
-// ----------------------------
-const wrapper = document.querySelector('.image-wrapper');
+  // ----------------------------
+  // 光筋エフェクト処理
+  // ----------------------------
+  const wrapper = document.querySelector('.image-wrapper');
 
-function triggerShine() {
-  wrapper.classList.remove('shine-active');
-  void wrapper.offsetWidth; // リフローでアニメ再発火
-  wrapper.classList.add('shine-active');
-}
+  function triggerShine() {
+    wrapper.classList.remove('shine-active');
+    void wrapper.offsetWidth; // リフローでアニメ再発火
+    wrapper.classList.add('shine-active');
+  }
 
-// ページ読み込み後すぐ shine
-window.addEventListener('load', () => {
+  // ページ読み込み後すぐ shine エフェクト起動 + ループ
   triggerShine();
-  setInterval(triggerShine, 3000); // 10秒ごとに再発火
+  setInterval(triggerShine, 6000); // 6秒ごとに再発火（調整可）
 });
