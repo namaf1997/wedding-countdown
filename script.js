@@ -91,7 +91,7 @@ const imageUrls = [
   "images2/2025-01-01_09-44-17_573.jpg"
 ];
 
-const imageIndex = Math.min(imageUrls.length - 1, Math.max(0, imageUrls.length - diffDays));
+const imageIndex = getDailyRandomIndex(imageUrls.length);
 
 const image = document.getElementById("daily-image");
 const number = document.getElementById("countdown-number");
