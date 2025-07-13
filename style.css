@@ -49,7 +49,7 @@ body {
 /* 日数テキスト：前面・視認性向上 */
 #countdown-number {
   position: absolute;
-  bottom: 8%;
+  bottom: 11%;
   width: 100%;
   text-align: center;
   font-size: clamp(2rem, 15vw, 8rem);
