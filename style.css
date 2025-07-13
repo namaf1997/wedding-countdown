@@ -109,15 +109,14 @@ body {
 
 .caption-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 5%;
+  width: 100%;
   text-align: center;
   font-size: clamp(1.5rem, 4vw, 3rem);
-  color: #fff;
-  font-family: 'Yusei Magic', cursive;
-  padding: 0 10vw;
+  color: #5c3b1e;
+  font-weight: bold;
   line-height: 1.6;
-  z-index: 5;
+  font-family: 'Yusei Magic', cursive;
 }
+
 
