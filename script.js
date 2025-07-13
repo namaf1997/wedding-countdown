@@ -21,7 +21,6 @@ window.addEventListener("load", () => {
   "images/2022-09-10_15-47-32_533.jpeg",
   "images/2022-11-04_21-04-14_732.jpeg",
   "images/2022-12-11_13-05-15_545.jpeg",
-  "images/2023-02-05_12-28-52_944.jpeg",
   "images/2023-02-07_19-59-08_766.jpeg",
   "images/2023-07-22_16-22-32_011.jpeg",
   "images/2023-08-06_16-06-28_232.jpeg",
