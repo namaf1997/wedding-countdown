@@ -107,7 +107,7 @@ window.addEventListener("load", () => {
     return hash % arrayLength;
   }
 
-  const imageIndex = Math.max(0, imageUrls.length - diffDays);
+  const imageIndex = diffDays % imageUrls.length;
 
   // ----------------------------
   // DOMの画像とカウントダウンに反映
