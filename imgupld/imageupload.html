@@ -49,6 +49,13 @@
     </div>
     <div class="footer">Powered by Google Apps Script</div>
   </div>
+    <!-- 例: status の下あたり -->
+<div id="status" class="progress mono"></div>
+
+<!-- ここに追加 -->
+<button id="openFolderBtn" class="btn" style="margin-top:10px" disabled>
+  📂 アップロード先フォルダを開く
+</button>
 
   <script>
     // ====== 設定（必要に応じて調整） ======
@@ -259,15 +266,27 @@
       i.type = 'hidden'; i.name = name; i.value = value;
       return i;
     }
+
+    // ====== 追加するコード ======
+
+// DriveフォルダのURL（閲覧権限を「リンクを知っている人は閲覧可」に設定しておく）
+const DRIVE_FOLDER_URL = 'https://drive.google.com/drive/folders/1Ek4EoDbO2C6wJs611H9_LCsj_oLur05T';
+
+const openBtn = document.getElementById('openFolderBtn');
+const iframe  = document.getElementById('hiddenFrame');
+
+// アップロード完了（iframeのload発火）でボタンを有効化
+iframe.addEventListener('load', () => {
+  openBtn.disabled = false;
+});
+
+// ボタンクリックでフォルダを新規タブで開く
+openBtn.addEventListener('click', () => {
+  window.open(DRIVE_FOLDER_URL, '_blank', 'noopener');
+});
+
   </script>
-
-  <!-- 例: status の下あたり -->
-<div id="status" class="progress mono"></div>
-
-<!-- ここに追加 -->
-<button id="openFolderBtn" class="btn" style="margin-top:10px" disabled>
-  📂 アップロード先フォルダを開く
-</button>
+  
 
   
 </body>
